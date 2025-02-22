@@ -1,0 +1,145 @@
+#include <iostream>
+using namespace std;
+
+void imprimirNumeros() {
+    int i = 1;
+    while (i <= 20) {
+        cout << i << " ";
+        i++;
+    }
+    cout << endl;
+}
+
+void imprimirHastaN() {
+    int n, i = 1;
+    cout << "Ingrese un número: ";
+    cin >> n;
+    while (i <= n) {
+        cout << i << " ";
+        i++;
+    }
+    cout << endl;
+}
+
+void sumarNumerosPositivos() {
+    int num, suma = 0;
+    cout << "Ingrese números positivos (negativo para salir): ";
+    while (true) {
+        cin >> num;
+        if (num < 0) break;
+        suma += num;
+    }
+    cout << "Suma total: " << suma << endl;
+}
+
+void fibonacciHastaN() {
+    int n, a = 0, b = 1, temp;
+    cout << "Ingrese el número límite para Fibonacci: ";
+    cin >> n;
+    while (a <= n) {
+        cout << a << " ";
+        temp = a + b;
+        a = b;
+        b = temp;
+    }
+    cout << endl;
+}
+
+void sumarHasta100() {
+    int num, suma = 0;
+    cout << "Ingrese números hasta que la suma sea mayor a 100: ";
+    while (suma <= 100) {
+        cin >> num;
+        suma += num;
+    }
+    cout << "Suma final: " << suma << endl;
+}
+
+void imprimirPares() {
+    int n, i = 2;
+    cout << "Ingrese un número: ";
+    cin >> n;
+    while (i <= n) {
+        cout << i << " ";
+        i += 2;
+    }
+    cout << endl;
+}
+
+void calcularMedia() {
+    int num, suma = 0, contador = 0;
+    cout << "Ingrese números (0 para calcular la media): ";
+    while (true) {
+        cin >> num;
+        if (num == 0) break;
+        suma += num;
+        contador++;
+    }
+    if (contador > 0)
+        cout << "Media: " << (float)suma / contador << endl;
+    else
+        cout << "No se ingresaron números." << endl;
+}
+
+void ingresarHastaCero() {
+    int num;
+    cout << "Ingrese números (0 para salir): ";
+    while (true) {
+        cin >> num;
+        if (num == 0) break;
+    }
+    cout << "Fin del programa." << endl;
+}
+
+void imprimirCuadrados() {
+    int i = 1;
+    while (i <= 10) {
+        cout << "Número: " << i << " - Cuadrado: " << i * i << endl;
+        i++;
+    }
+}
+
+void calcularProducto10() {
+    int i = 1, producto = 1;
+    while (i <= 10) {
+        producto *= i;
+        i++;
+    }
+    cout << "Producto de los primeros 10 números naturales: " << producto << endl;
+}
+
+int main() {
+    int opcion;
+    do {
+        cout << "\n=== MENU ===" << endl;
+        cout << "1. Imprimir números del 1 al 20" << endl;
+        cout << "2. Imprimir números del 1 hasta n" << endl;
+        cout << "3. Sumar números positivos" << endl;
+        cout << "4. Secuencia de Fibonacci hasta n" << endl;
+        cout << "5. Sumar números hasta superar 100" << endl;
+        cout << "6. Imprimir números pares hasta n" << endl;
+        cout << "7. Calcular media de números" << endl;
+        cout << "8. Ingresar números hasta 0" << endl;
+        cout << "9. Imprimir cuadrados de los primeros 10 números" << endl;
+        cout << "10. Calcular producto de los primeros 10 números" << endl;
+        cout << "11. Salir" << endl;
+        cout << "Seleccione una opción: ";
+        cin >> opcion;
+
+        if (opcion == 1) imprimirNumeros();
+        else if (opcion == 2) imprimirHastaN();
+        else if (opcion == 3) sumarNumerosPositivos();
+        else if (opcion == 4) fibonacciHastaN();
+        else if (opcion == 5) sumarHasta100();
+        else if (opcion == 6) imprimirPares();
+        else if (opcion == 7) calcularMedia();
+        else if (opcion == 8) ingresarHastaCero();
+        else if (opcion == 9) imprimirCuadrados();
+        else if (opcion == 10) calcularProducto10();
+        else if (opcion == 11) cout << "Saliendo..." << endl;
+        else cout << "Opción no válida. Intente de nuevo." << endl;
+
+    } while (opcion != 11);
+
+    return 0;
+}
