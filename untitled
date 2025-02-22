@@ -1,0 +1,199 @@
+#include <iostream>
+using namespace std;
+
+// Función para verificar si un número es positivo, negativo o cero
+void verificarNumero() {
+    int num;
+    cout << "Ingrese un numero: ";
+    cin >> num;
+
+    if (num > 0)
+        cout << "El numero es positivo." << endl;
+    else if (num < 0)
+        cout << "El numero es negativo." << endl;
+    else
+        cout << "El numero es cero." << endl;
+}
+
+// Función para verificar si un número es par o impar
+void verificarParidad() {
+    int num;
+    cout << "Ingrese un numero: ";
+    cin >> num;
+
+    if (num % 2 == 0)
+        cout << "El numero es par." << endl;
+    else
+        cout << "El numero es impar." << endl;
+}
+
+// Función para encontrar el mayor de tres números
+void encontrarMayor() {
+    int a, b, c;
+    cout << "Ingrese tres numeros: ";
+    cin >> a >> b >> c;
+
+    if (a >= b && a >= c)
+        cout << "El mayor es: " << a << endl;
+    else if (b >= a && b >= c)
+        cout << "El mayor es: " << b << endl;
+    else
+        cout << "El mayor es: " << c << endl;
+}
+
+// Función para determinar si un año es bisiesto
+void verificarBisiesto() {
+    int anio;
+    cout << "Ingrese un año: ";
+    cin >> anio;
+
+    if ((anio % 4 == 0 && anio % 100 != 0) || (anio % 400 == 0))
+        cout << "El año es bisiesto." << endl;
+    else
+        cout << "El año no es bisiesto." << endl;
+}
+
+// Función para verificar si una letra es vocal o consonante
+void verificarLetra() {
+    char letra;
+    cout << "Ingrese una letra: ";
+    cin >> letra;
+
+    letra = tolower(letra); // Convertir a minúscula para comparar
+
+    if (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u')
+        cout << "Es una vocal." << endl;
+    else if ((letra >= 'a' && letra <= 'z'))
+        cout << "Es una consonante." << endl;
+    else
+        cout << "No es una letra válida." << endl;
+}
+
+// Función para verificar si un número es primo
+void verificarPrimo() {
+    int num, i, esPrimo = 1;
+    cout << "Ingrese un numero: ";
+    cin >> num;
+
+    if (num <= 1) {
+        esPrimo = 0;
+    } else {
+        for (i = 2; i * i <= num; i++) {
+            if (num % i == 0) {
+                esPrimo = 0;
+                break;
+            }
+        }
+    }
+
+    if (esPrimo)
+        cout << "El numero es primo." << endl;
+    else
+        cout << "El numero no es primo." << endl;
+}
+
+// Función para verificar si un año de nacimiento es válido
+void verificarAnioNacimiento() {
+    int anio;
+    cout << "Ingrese su año de nacimiento: ";
+    cin >> anio;
+
+    if (anio > 1900 && anio < 2025)
+        cout << "Es un año de nacimiento valido." << endl;
+    else
+        cout << "No es un año de nacimiento valido." << endl;
+}
+
+// Función para verificar si un número es múltiplo de 5 y 7
+void verificarMultiplo() {
+    int num;
+    cout << "Ingrese un numero: ";
+    cin >> num;
+
+    if (num % 5 == 0 && num % 7 == 0)
+        cout << "El numero es múltiplo de 5 y 7." << endl;
+    else
+        cout << "El numero NO es múltiplo de 5 y 7." << endl;
+}
+
+// Función para determinar la calificación de un estudiante
+void determinarCalificacion() {
+    int nota;
+    cout << "Ingrese la calificación (0-100): ";
+    cin >> nota;
+
+    if (nota >= 90 && nota <= 100)
+        cout << "Calificacion: A" << endl;
+    else if (nota >= 80)
+        cout << "Calificacion: B" << endl;
+    else if (nota >= 70)
+        cout << "Calificacion: C" << endl;
+    else if (nota >= 60)
+        cout << "Calificacion: D" << endl;
+    else
+        cout << "Calificacion: F" << endl;
+}
+
+// Función para calcular el precio con descuento
+void calcularDescuento() {
+    double precio, descuento, precioFinal;
+    cout << "Ingrese el precio del artículo: ";
+    cin >> precio;
+    cout << "Ingrese el porcentaje de descuento (%): ";
+    cin >> descuento;
+
+    precioFinal = precio - (precio * descuento / 100);
+    cout << "El precio con descuento es: " << precioFinal << endl;
+}
+
+// Función principal con menú
+int main() {
+    int opcion;
+
+    do {
+        // Mostrar el menú
+        cout << "\n======= MENU =======" << endl;
+        cout << "1. Verificar si un numero es positivo, negativo o cero" << endl;
+        cout << "2. Verificar si un numero es par o impar" << endl;
+        cout << "3. Encontrar el mayor de tres numeros" << endl;
+        cout << "4. Determinar si un año es bisiesto" << endl;
+        cout << "5. Verificar si una letra es vocal o consonante" << endl;
+        cout << "6. Verificar si un numero es primo" << endl;
+        cout << "7. Verificar si un año de nacimiento es valido" << endl;
+        cout << "8. Verificar si un numero es multiplo de 5 y 7" << endl;
+        cout << "9. Determinar la calificacion de un estudiante" << endl;
+        cout << "10. Calcular precio despues del descuento" << endl;
+        cout << "11. Salir" << endl;
+        cout << "Seleccione una opcion: ";
+        cin >> opcion;
+
+        // Evaluar opción con if-else
+        if (opcion == 1)
+            verificarNumero();
+        else if (opcion == 2)
+            verificarParidad();
+        else if (opcion == 3)
+            encontrarMayor();
+        else if (opcion == 4)
+            verificarBisiesto();
+        else if (opcion == 5)
+            verificarLetra();
+        else if (opcion == 6)
+            verificarPrimo();
+        else if (opcion == 7)
+            verificarAnioNacimiento();
+        else if (opcion == 8)
+            verificarMultiplo();
+        else if (opcion == 9)
+            determinarCalificacion();
+        else if (opcion == 10)
+            calcularDescuento();
+        else if (opcion == 11)
+            cout << "Saliendo del programa..." << endl;
+        else
+            cout << "Opción no valida. Intente de nuevo." << endl;
+
+    } while (opcion != 11);
+
+    return 0;
+}
